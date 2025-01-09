@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-coll-c2b6a358582a4ee6ad4be849d99900e8-depl
+  labels:
+    app: product-coll-c2b6a358582a4ee6ad4be849d99900e8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-coll-c2b6a358582a4ee6ad4be849d99900e8
+  template:
+    metadata:
+      labels:
+        app: product-coll-c2b6a358582a4ee6ad4be849d99900e8
+    spec:
+      containers:
+        - name: product-coll-c2b6a358582a4ee6ad4be849d99900e8
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:product-coll-c2b6a358582a4ee6ad4be849d99900e8
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9063
